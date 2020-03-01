@@ -1,0 +1,44 @@
+.main-header
+ %h1 Daily-Report
+
+.main-contents
+ .main-contents__1-content
+  .user-name-box
+   .user-name-box-right
+    %p [User-name]
+   .user-name-box-user
+    = link_to edit_user_path(current_user) do
+     = current_user.name
+     
+   
+  .fail-box
+   .fail-name
+    %p [報告一覧]
+   .fail-date
+    = link_to new_report_path(current_user.id)  do
+     =icon('far', 'folder-open', class: 'icon')
+
+ .main-contents__2-content
+  .report
+   .report-title
+    %p『報告フォーム』
+   = form_for [@report] do |f|
+    =f.label :訪問日 ,class: "input-box-date-label"
+    =f.date_field :date, class: "input-box-date"
+    =f.label :訪問先, class: "input-box-where-label"
+    =f.text_field :where, class: "input-box-where"
+    =f.label :応対者, class: "input-box-responder-label"
+    =f.text_field :reponder, class: "input-box-responder"
+    =f.label :同行者, class: "input-box-responder-label"
+    =f.text_field :companion, class: "input-box-companion"
+    =f.label :打合せ内容, class: "report-text-label"
+    =f.text_area :text, class: "report-text" ,size: "50x10" 
+    =f.submit '送信', class: "input-box-btn" 
+
+ .main-contents__3-content
+  .main-contents__3-content__calendar
+   =month_calendar do |date| 
+    =date 
+ 
+.footer
+ 

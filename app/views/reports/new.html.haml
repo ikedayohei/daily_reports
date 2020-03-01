@@ -1,0 +1,45 @@
+.show-wrapper
+
+.show-header
+ %h1 Daily-Report
+
+.show-contents
+ .show-contents__left
+  .show-contents__left__top
+   .show-contents__left__top__right
+    %p ＜日報一覧＞
+   .show-contents__left__top__left
+    = link_to  root_path do
+     =icon('fas','share', class: 'icon')
+    
+  .show-contents__left__report
+   -@reports .each do |report|
+    = link_to report_path(report.id) , method: :delete do
+     %ul 削除
+    = link_to edit_report_path(report.id) do
+     %li 編集
+    %table.report-box{:border => "3"}
+     %tr
+     %th{:width => "200"} 訪問日
+     %th{:width => "600"}
+      =report.date
+     %tr
+      %th 訪問先
+      %th
+       =report.where
+     %tr
+      %th 応対者
+      %th
+       =report.reponder
+     %tr
+      %th 同行者
+      %th
+       =report.companion
+     %tr
+      %th 打合せ内容
+      %th 
+       =report.text
+    
+ .show-contents__right
+  = pie_chart @data
+  
