@@ -1,78 +1,100 @@
-&__2-content {
-  width: 600px;
-  height: 100%;
-.report {
-   height: 550px;
+.edit-header {
+  width: 100%;
+  color: bisque;
+  font-size: 40px;
+  padding-left: 28px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.753);
+}
+
+.edit-main-contents {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("texture171030IMGL0669_TP_V1.jpg");
+  background-size: cover;
+
+.edit-report-main {
+   height: 600px;
    width: 100%;
-   .report-title {
-      width: 100%;
+   background-color: rgba(255,255,255,0.2);
+   .edit {
+    font-size: 30px;
+    height: 50px;
+    width: 100%;
+    padding-left: 450px;
+    float: left;
+    .edit-report-title {
+      width: 180px;
       height: 30px;
-      font-size: 25px;
+      font-size: 13px;
       line-height: 30px;
       margin-top: 5px;
-      margin-bottom: 10px;
-   } 
-  .new_report {
+      margin-left: 10px;
+      } 
+    }
+  .edit_report {
+    width: 100%;
+    height: 600px;
     .input-box-date {
        width: 200px;
-       height: 30px;
+       height: 25px;
        border: 1px solid #ccc;
        appearance: none;
        border-radius: 5px;
        padding: 5px;
+       margin-top: 2px;
        margin-left: 10px;
-       margin-top: 5px;
        display: block;
-       margin-bottom: 10px;
+       font-size: 15px;
        }
     .input-box-date-label{
       margin-left: 10px;
-      font-size: 13px;
+      font-size: 15px;
     }
     .input-box-where {
       width: 200px;
-      height: 30px;
+      height: 25px;
       border: 1px solid #ccc;
       appearance: none;
       border-radius: 5px;
       padding: 5px;
       margin-left: 10px;
-      margin-bottom: 10px;
       display: block;
+      font-size: 15px;
     }
     .input-box-where-label {
       margin-left: 10px;
-      font-size: 13px;
+      font-size: 15px;
     }
     .input-box-responder {
       width: 200px;
-      height: 30px;
+      height: 25px;
       border: 1px solid #ccc;
       appearance: none;
       border-radius: 5px;
       padding: 5px;
       margin-left: 10px;
-      margin-bottom: 10px;
       display: block;
+      font-size: 15px;
     }
     .input-box-responder-label {
       margin-left: 10px;
-      font-size: 13px;
+      font-size: 15px;
     }
     .input-box-companion {
       width: 200px;
-      height: 30px;
+      height: 25px;
       border: 1px solid #ccc;
       appearance: none;
       border-radius: 5px;
       padding: 5px;
       margin-left: 10px;
-      margin-bottom: 10px;
       display: block;
+      font-size: 15px;
     }
     .input-box-companion-label {
       margin-left: 10px;
-      font-size: 13px;
+      font-size: 15px;
     }
     .report-text {
       border: 1px solid #ccc;
@@ -80,26 +102,31 @@
       border-radius: 5px;
       padding: 5px;
       margin-left: 10px;
-      margin-bottom: 10px;
       display: block;
       white-space: pre-line;
       word-break: break-all;
+      font-size: 15px;
     }
     .report-text-label {
       margin-left: 10px;
-      font-size: 13px;
+      font-size: 15px;
     }
-    .input-box-btn {
+    .edit-input-box-btn {
       margin-left: 10px;
       width: 100px;
       height: 30px;
-      border: 1px solid #ccc;
       appearance: none;
       border-radius: 5px;
-      color:black;
       cursor: pointer;
-      background-color:whitesmoke;
+      background-color: rgb(129, 127, 127);
+      border: 2px solid #333;
+      font-size: 12px;
+      &:hover {
+        background-color: #fff;
+        border-color: #59b1eb;
+        color: #59b1eb;
+      }
      }
    }
- }
+  }
 }

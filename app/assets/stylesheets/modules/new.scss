@@ -5,10 +5,10 @@
 .show-header {
   height: 50px;
   width: 100%;
-  background-color: #38aef0;
-  color: whitesmoke;
+  color: bisque;
   font-size: 40px;
   padding-left: 28px;
+  background-color: rgba(0, 0, 0, 0.877);
 }
 
 .show-contents {
@@ -18,29 +18,40 @@
 }
 .show-contents__left {
   height: 100vh;
-  width: 600px;
+  width: 750px;
+  color: beige;
+  background-image: url("board-114656_1920-400x270-MM-100.jpg");
+  background-size: cover;
   display: block;
   overflow: scroll;
+  padding-left: 80px;
+  color: rgba(253, 249, 249, 0.952);
   &__top {
   height: 50px;
   width: 100%;
+  margin-bottom: 10px;
   font-size: 30px;
   display: flex;
     &__right {
     height: 50px;
     width: 360px;
     text-align: center;
-    line-height: 50px;
+    line-height: 80px;
     }
     &__left {
     height: 50px;
     width: 100px;
+    line-height: 80px;
     a {
       text-decoration:none;
-      color: black;
-      line-height: 50px;
+      color: rgba(253, 249, 249, 0.932);
       font-size: 2.5rem;
       cursor: pointer;
+      &:hover {
+        background-color: #fff;
+        border-color: #59b1eb;
+        color: #59b1eb;
+      }
       }
     }
   }
@@ -48,25 +59,36 @@
     height: 100%;
     width: 500px;
     ul {
-      margin-left: 50px;
       float: left;
-      padding: 10px;
+      margin-top: 5px;
     }
     li {
       list-style: none;
-      margin-left: 100px;
-      padding-top: 10px;
+      padding-left: 10px;
+      float: left;
+      margin-top: 5px;
+      padding-right: ５px;
     }
     a {
-      color: blue;
+      color: beige;
       text-decoration: none;
     }
+    .icon {
+     font-size: 24px;
+     margin-top: 2px;
+     color: gold;
+     padding-left: 5px;
+
+    }
+    .unicon {
+      margin-top: 7px;
+      color: white;
+      padding-left: 5px;
+    }
   }
-  .report-box {
-    height: 150px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    margin-left: 50px;
+  .report-box-new {
+    width: 450px;
+    margin-bottom: 2px;
     
   }
 }
@@ -74,4 +96,32 @@
 .show-contents__right {
   height: 100vh;
   width: calc(100vw - 600px );
+  display: block;
+  background-image: url("unnamed.jpg");
+  background-size: cover;
+  background-position: bottom;
+  .show-title {
+    height: 40px;
+    width: 400px;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    position: absolute;
+    padding-left: 150px;
+  }
+  .king {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    margin-left: 110px;
+    font-size: 25px;
+    line-height: 40px;
+    color: gold;
+  }
+  .report-ranking {
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }

@@ -1,0 +1,4 @@
+- if report.bookmark_by?(current_user)
+  = render 'reports/bookmark', report: report
+- else
+  = render 'reports/unbookmark', report: report
