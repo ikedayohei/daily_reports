@@ -1,7 +1,12 @@
-.main-contents__2-content
- .report
-  .report-title
-   %p『報告フォーム』
+.edit-header
+ %h1 Daily-Report
+
+.edit-main-contents
+ .edit-report-main
+  .edit
+   %p『報告フォーム 編集』
+   .edit-report-title
+    %a.btn{:href => "/"} トップページへ戻る
    = form_for [@report] do |f|
     =f.label :訪問日 ,class: "input-box-date-label"
     =f.date_field :date, class: "input-box-date"
@@ -12,7 +17,7 @@
     =f.label :同行者, class: "input-box-responder-label"
     =f.text_field :companion, class: "input-box-companion"
     =f.label :打合せ内容, class: "report-text-label"
-    =f.text_area :text, class: "report-text" ,size: "50x10" 
-    =f.submit '送信', class: "input-box-btn" 
+    =f.text_area :text, class: "report-text" ,size: "50x7" 
+    =f.submit '更新', class: "edit-input-box-btn", data: { confirm: "更新しますか？" } 
 
  

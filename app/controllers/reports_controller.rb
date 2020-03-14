@@ -1,13 +1,16 @@
 class ReportsController < ApplicationController
   def index
-    @reports = Report.all
+    @reports = Report.all.includes(:user)
     @report = Report.new
+    @places = Place.all.includes(:user)
+    @place = Place.new
   end
 
   def new
     @reports = Report.all
-    @report = Report.new
-    @data = {'2019-06-01' => 100, '2019-06-02' => 200, '2019-06-03' => 150}
+    @reports = Report.order("created_at DESC").page(params[:page]).per(4)
+    @sum = Report.joins(:user).group("users.name").order("count_all DESC").count
+    
   end
 
   def create
@@ -16,6 +19,9 @@ class ReportsController < ApplicationController
   end
 
   def show
+    @report = Report.find(params[:id])
+    @comments = @report.comments
+    @comment = Comment.new
   end
 
   def edit
@@ -31,6 +37,11 @@ class ReportsController < ApplicationController
   def destroy
     report = Report.find(params[:id])
     report.destroy
+    redirect_to root_path
+  end
+  
+  def bookmarks
+    @reports = current_user.bookmark_reports.includes(:user).recent
   end
 
   private

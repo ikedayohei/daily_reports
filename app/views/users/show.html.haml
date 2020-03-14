@@ -1,0 +1,77 @@
+.user-show-header
+ %h1 Daily-Report
+.title
+ %p [MY-page]
+ .back
+  %a.btn{:href => "/"} トップページへ戻る
+
+.user-show-contents
+ .user-show-contents-right
+  .user-title
+   %p [お気に入り一覧]
+  .star
+   =icon('fas', 'star', class:"icon")
+   =@all 
+  .report-content
+   = paginate(@bookmarks)
+   -@bookmarks. each do |bookmark|
+    %th
+    = bookmark.report.created_at.to_s(:datetime_jp)
+    %table.report-box-star{:border => "1"}
+     %tr
+     %th{:width => "200"} 訪問日
+     %th{:width => "600"}
+      =bookmark.report.date
+     %tr
+     %th 訪問先
+     %th
+      =bookmark.report.where
+     %tr
+     %th 応対者
+     %th
+      =bookmark.report.reponder
+     %tr
+     %th 同行者
+     %th
+      =bookmark.report.companion
+     %tr
+     %th 打合せ内容
+     %th 
+      =bookmark.report.text
+
+ .user-show-contents-left
+  .user-report-title
+   %p [日報一覧]
+  .all
+   =icon('fas', 'pencil-alt')
+   = @text
+  .report-contents
+   =paginate(@report)
+   -@report .each do |report|
+    = link_to report_path(report.id) , method: :delete, data: { confirm: "削除しますか？" } do
+     %ul 削除
+    = link_to edit_report_path(report.id) do
+     %li 編集
+    %th
+     =report.created_at.to_s(:datetime_jp)
+    %table.report-box-show{:border => "1"}
+     %tr
+     %th{:width => "200"} 訪問日
+     %th{:width => "600"}
+      =report.date
+     %tr
+     %th 訪問先   
+     %th
+      =report.where
+     %tr
+     %th 応対者
+     %th
+      =report.reponder
+     %tr
+     %th 同行者
+     %th
+      =report.companion
+     %tr
+     %th 打合せ内容
+     %th 
+      =report.text

@@ -1,5 +1,17 @@
 class UsersController < ApplicationController
 
+  def ranking
+    @user=  User.group(:report_id).order("count(report_id) desc")
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @report = @user.reports.order("created_at DESC").page(params[:page]).per(3)
+    @bookmarks = Bookmark.where("user_id = ?", @user).order("created_at DESC").page(params[:page]).per(3)
+    @all = Bookmark.joins(:user).order("count_all DESC").count
+    @text = Report.joins(:user).count(:id)
+  end
+
   def edit
   end
 
