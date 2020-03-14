@@ -108,6 +108,34 @@
       }
      }
     }
+    .company-box{
+      height: 50px;
+      width: 300px;
+      display: flex;
+     .company-name {
+      height: 50px;
+      width: 150px;
+      text-align: right;
+      line-height: 50px;
+     }
+     .company-date {
+      height: 50px;
+      width: 100px;
+      text-align: center;
+      a {
+        text-decoration:none;
+        color: black;
+        font-size: 2.5rem;
+        cursor: pointer;
+        line-height: 50px;
+        &:hover {
+          background-color: #fff;
+          border-color: #59b1eb;
+          color: #59b1eb
+        }
+      }
+     }
+    }
    }
   &__2-content {
     width: 600px;

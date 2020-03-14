@@ -1,0 +1,32 @@
+.company
+
+ .main-header
+  %h1 Daily-Report
+ .company-contents
+  .company-data
+   .company-title
+    %tr
+     %th『登録フォーム』
+     %th
+      = link_to  root_path do
+       =icon('fas','share', class: 'icon')
+   .company-box
+    = form_for [@company] do |f|
+     =f.label :会社名 ,class: "input-box-date-label"
+     =f.text_field :name, class: "input-box-date"
+     =f.label :住所, class: "input-box-where-label"
+     =f.text_field :postcode, class: "input-box-where"
+     =f.label :電話番号, class: "input-box-responder-label"
+     =f.text_field :phone_number, class: "input-box-responder"
+     =f.label :資本金, class: "input-box-responder-label"
+     =f.text_field :capital, class: "input-box-companion"
+     =f.label :売上高, class: "report-text-label"
+     =f.text_field :sale, class: "report-text" 
+     =f.label :事業内容, class: "report-text-label"
+     =f.text_field :description, class: "report-text" 
+     =f.label :特徴, class: "report-text-label"
+     =f.text_field :characteristic, class: "report-text" 
+     =f.submit '登録', class: "edit-input-box-btn", data: { confirm: "登録しますか？" } 
+
+
+  .company-list

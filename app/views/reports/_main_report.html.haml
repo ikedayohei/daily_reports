@@ -15,19 +15,27 @@
    .fail-date
     = link_to new_report_path(current_user.id)  do
      =icon('far', 'folder-open', class: 'icon')
+     
   .my-page-box
    .my-page-name
     %p [MY-page]
    .my-page-date
     = link_to  user_path(current_user)  do
      =icon('far', 'id-badge', class: 'icon')
+
+  .company-box
+   .company-name
+    %p [訪問先 登録]
+   .company-date
+    = link_to   companies_path do
+     =icon('fas', 'building', class: 'icon')
      
 
  .main-contents__2-content
   .report
    .report-title
     %p『報告フォーム』
-   = form_for [@report,@place] do |f|
+   = form_for [@report] do |f|
     =f.label :訪問日,class: "input-box-date-label"
     =f.label :必須, class: "input-box-date-label-h"
     =f.date_field :date, class: "input-box-date"

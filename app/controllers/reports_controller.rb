@@ -2,8 +2,7 @@ class ReportsController < ApplicationController
   def index
     @reports = Report.all.includes(:user)
     @report = Report.new
-    @places = Place.all.includes(:user)
-    @place = Place.new
+    
   end
 
   def new
@@ -46,6 +45,6 @@ class ReportsController < ApplicationController
 
   private
   def report_params
-    params.require(:report).permit(:text, :where ,:reponder ,:companion, :date).merge(user_id: current_user.id)
+    params.require(:report).permit(:text, :where ,:reponder ,:companion, :date, places_attributes: [:where]).merge(user_id: current_user.id)
   end
 end
