@@ -11,13 +11,14 @@
    %p [お気に入り一覧]
   .star
    =icon('fas', 'star', class:"icon")
-   =@all 
   .report-content
-   = paginate(@bookmarks)
+   .paginate
+    = paginate(@bookmarks)
    -@bookmarks. each do |bookmark|
-    %th
-    = bookmark.report.created_at.to_s(:datetime_jp)
-    %table.report-box-star{:border => "1"}
+    %table.report-star
+     %th
+      = bookmark.report.created_at.to_s(:datetime_jp)
+    %table.report-box-star{:border => "3"}
      %tr
      %th{:width => "200"} 訪問日
      %th{:width => "600"}
@@ -44,9 +45,9 @@
    %p [日報一覧]
   .all
    =icon('fas', 'pencil-alt')
-   = @text
   .report-contents
-   =paginate(@report)
+   .pagination-report
+    =paginate(@report)
    -@report .each do |report|
     = link_to report_path(report.id) , method: :delete, data: { confirm: "削除しますか？" } do
      %ul 削除
@@ -54,7 +55,7 @@
      %li 編集
     %th
      =report.created_at.to_s(:datetime_jp)
-    %table.report-box-show{:border => "1"}
+    %table.report-box-show{:border => "3"}
      %tr
      %th{:width => "200"} 訪問日
      %th{:width => "600"}

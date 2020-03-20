@@ -1,6 +1,6 @@
 class Report < ApplicationRecord
   belongs_to :user
-  has_many :places
+  has_many :companies
   has_many :bookmarks
   has_many :comments
 

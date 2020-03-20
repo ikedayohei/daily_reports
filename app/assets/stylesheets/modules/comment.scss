@@ -6,7 +6,7 @@
 .com-header {
   height: 50px;
   width: 100%;
-  color: bisque;
+  color: rgb(206, 198, 189);
   font-size: 40px;
   padding-left: 28px;
   background-color: rgba(0, 0, 0, 0.877);
@@ -20,6 +20,7 @@
   text-align: center;
   display: inline-flex;
   justify-content: center;
+  background-color: rgb(204, 191, 191);
   .com-back {
     position: absolute;
     height: 50px;
@@ -37,7 +38,7 @@
 }
 
 .com-contens {
-  background-image: url("texture171030IMGL0669_TP_V1.jpg");
+  background-image: url("14-1.jpg");
   background-size: cover;
   background-color: rgba(255,255,255,0.1);
   width: 100%;
@@ -76,15 +77,18 @@
     height: 200px;
     font-size: 18px;
     margin-bottom: 10px;
+    background-color: white;
    }
  }
  .comments {
   height: 200px;
   color: black;
+  background-color: white;
+  border: 1px solid black;
  }
 
  .comment-box {
-   margin-top: 3px
+   margin-top: 3px;
  }
   
  a {

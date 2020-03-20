@@ -13,23 +13,25 @@
      =icon('fas','share', class: 'icon')
     
   .show-contents__left__report
-   = paginate(@reports)
+   .show-pagi
+    = paginate(@reports)
    -@reports .each do |report|
     - if user_signed_in? && current_user.id == report.user_id
-     = link_to report_path(report.id) , method: :delete, data: { confirm: "削除しますか？" } do
-      %ul 削除
-     = link_to edit_report_path(report.id) do
-      %li 編集
+     .show-link
+      = link_to report_path(report.id) , method: :delete, data: { confirm: "削除しますか？" } do
+       %ul 削除
+      = link_to edit_report_path(report.id) do
+       %li 編集
     .show-comment
      = link_to report_path(report.id) do
       %li コメントする
      = render 'reports/bookmark_area', report: report
     %table.report-box-new
-    %th 投稿者
-    %tn
-     = report.user.name
-     = report.created_at.to_s(:datetime_jp)
-    %table.report-box{:border => "2" ,:style => "border-color: beige"}
+     %th{:width => "50"} 投稿者:
+     %th{:width => "400"}
+      = report.user.name
+      = report.created_at.to_s(:datetime_jp)
+    %table.report-box{:border => "2" }
      %tr
      %th{:width => "200"} 訪問日
      %th{:width => "600"}
@@ -58,18 +60,36 @@
   .king
    =icon('fas','crown', class: 'icon')
   -@sum.each_with_index do |report, i|
+   .report-ranking-box
+    %table.report-ranking{:border => "2" }
+     %tr
+      %th{:width => "100"}
+       第
+       = i+1
+       位
+      %th{:width => "100"} 名前
+      %th{:width => "100"}
+       = report.first
+      %th{:width => "100"} 訪問件数
+      %th{:width => "100"}
+       = report.second
+  .show-title
+   %P [訪問先いいね ランキング]
+  .king
+   =icon('fas','crown', class: 'icon')
+  -@ranking.each_with_index do |ranking, i|
    %table.report-ranking{:border => "2" }
     %tr
      %th{:width => "100"}
       第
       = i+1
       位
-     %th{:width => "100"} 名前
+     %th{:width => "100"} 会社名
      %th{:width => "100"}
-      = report.first
-     %th{:width => "100"} 訪問件数
+      = ranking.first
+     %th{:width => "100"} いいね数
      %th{:width => "100"}
-      = report.second
+      = ranking.second
   
 
 

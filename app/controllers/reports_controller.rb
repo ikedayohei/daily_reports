@@ -2,14 +2,16 @@ class ReportsController < ApplicationController
   def index
     @reports = Report.all.includes(:user)
     @report = Report.new
+    @company = Company.all
     
   end
 
   def new
     @reports = Report.all
-    @reports = Report.order("created_at DESC").page(params[:page]).per(4)
+    @reports = Report.order("created_at DESC").page(params[:page]).per(3)
     @sum = Report.joins(:user).group("users.name").order("count_all DESC").count
-    
+    @like =Like.all
+    @ranking = Like.joins(:company).group("companies.name").order("count_all DESC").count
   end
 
   def create
@@ -45,6 +47,6 @@ class ReportsController < ApplicationController
 
   private
   def report_params
-    params.require(:report).permit(:text, :where ,:reponder ,:companion, :date, places_attributes: [:where]).merge(user_id: current_user.id)
+    params.require(:report).permit(:text, :company_ids ,:reponder ,:companion, :date, places_attributes: [:where]).merge(user_id: current_user.id )
   end
 end

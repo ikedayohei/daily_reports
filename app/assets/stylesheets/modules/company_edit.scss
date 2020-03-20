@@ -1,0 +1,225 @@
+.edit-company{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-image: url("14-1.jpg");
+  background-size: cover;
+}
+
+.main-header {
+width: 100%;
+color: bisque;
+font-size: 40px;
+padding-left: 28px;
+height: 50px;
+background-color: rgba(0, 0, 0, 0.753);
+}
+
+.ed-company-contents {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ background-color: rgba(255,255,255,0.3);
+}
+.ed-company-data {
+flex: 1;
+.ed-company-title {
+  height: 50px;
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  line-height: 50px;
+}
+a {
+  text-decoration:none;
+  color: black;
+  font-size: 2.5rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    border-color: #59b1eb;
+    color: #59b1eb;
+  }
+  }
+}
+.edit_company {
+  background-color: rgba(255, 255, 255, 0.938);
+  width: 400px;
+  margin: 0 auto;
+  border: 2px solid black;
+ .ed-input-box-name {
+   width: 300px;
+   height: 30px;
+   appearance: none;
+   border-radius: 5px;
+   margin: 0 auto;
+   display: block;
+   margin-bottom: 5px;
+   border: 1px solid rgb(19, 22, 19);
+
+   }
+ .ed-input-box-name-label{
+  margin-left: 50px;
+  font-size: 13px;
+}
+.ed-input-box-date-label-h{
+  margin-left: 5px;
+  font-size: 13px;
+  background-color: rgb(20, 73, 220);
+  color: beige;
+}
+.ed-input-box-postcode {
+  width: 300px;
+  height: 30px;
+  appearance: none;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  border: 1px solid rgb(19, 22, 19);
+  display: block;
+}
+.ed-input-box-postcode-label {
+  margin-left: 50px;
+  font-size: 13px;
+}
+.ed-input-box-where-label-h{
+  margin-left: 5px;
+  font-size: 13px;
+  background-color: rgb(20, 73, 220);
+  color: beige;
+}
+.ed-input-box-phone_number {
+  width: 300px;
+  height: 30px;
+  appearance: none;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: block;
+  border: 1px solid rgb(19, 22, 19);
+}
+.ed-input-box-phone_number-label {
+  margin-left: 50px;
+  font-size: 13px;
+}
+.ed-input-box-responder-label-h{
+  margin-left: 5px;
+  font-size: 13px;
+  background-color: rgb(20, 73, 220);
+  color: beige;
+}
+.ed-input-box-capital {
+  width: 300px;
+  height: 30px;
+  appearance: none;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: block;
+  border: 1px solid rgb(19, 22, 19);
+}
+.ed-input-box-capital-label {
+  margin-left: 50px;
+  font-size: 13px;
+}
+.ed-sale-text {
+  width: 300px;
+  height: 30px;
+  appearance: none;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: block;
+  border: 1px solid rgb(19, 22, 19);
+}
+.ed-sale-label {
+  margin-left: 50px;
+  font-size: 13px;
+}
+.ed-sale-label-h{
+  margin-left: 5px;
+  font-size: 13px;
+  background-color: rgb(20, 73, 220);
+  color: beige;
+}
+.ed-characteristic-text {
+  width: 300px;
+  height: 30px;
+  appearance: none;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: block;
+  border: 1px solid rgb(19, 22, 19);
+}
+.ed-characteristic-label {
+  margin-left: 50px;
+  font-size: 13px;
+}
+.ed-characteristic-label-h{
+  margin-left: 5px;
+  font-size: 13px;
+  background-color: rgb(20, 73, 220);
+  color: beige;
+}
+.ed-description-text {
+  width: 300px;
+  height: 30px;
+  appearance: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: block;
+  border: 1px solid rgb(19, 22, 19);
+}
+.ed-description-label {
+  margin-left: 50px;
+  font-size: 13px;
+}
+.ed-report-text-label-h{
+  margin-left: 5px;
+  font-size: 13px;
+  background-color: rgb(20, 73, 220);
+  color: beige;
+}
+.ed-url-text {
+  width: 300px;
+  height: 30px;
+  appearance: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: block;
+  border: 1px solid rgb(19, 22, 19);
+}
+.ed-url-label {
+  margin-left: 50px;
+  font-size: 13px;
+}
+.ed-report-text-label-h{
+  margin-left: 5px;
+  font-size: 13px;
+  background-color: rgb(20, 73, 220);
+  color: beige;
+}
+.ed-company-input-box-btn {
+  margin-left: 50px;
+  background-color: #333;
+  border: 2px solid #333;
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  appearance: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    border-color: #59b1eb;
+    color: #59b1eb
+  }
+ }
+}

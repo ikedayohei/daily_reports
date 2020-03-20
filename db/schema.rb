@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200314043846) do
+ActiveRecord::Schema.define(version: 20200315072152) do
 
   create_table "bookmarks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -34,18 +34,29 @@ ActiveRecord::Schema.define(version: 20200314043846) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.string   "postcode"
-    t.integer  "phone_number"
-    t.integer  "capital"
-    t.integer  "sale"
+    t.text     "postcode",       limit: 65535
+    t.string   "phone_number"
+    t.string   "capital"
+    t.string   "sale"
     t.string   "description"
     t.text     "characteristic", limit: 65535
+    t.string   "url"
     t.integer  "user_id"
     t.integer  "report_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.integer  "likes_count"
     t.index ["report_id"], name: "index_companies_on_report_id", using: :btree
     t.index ["user_id"], name: "index_companies_on_user_id", using: :btree
+  end
+
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_likes_on_company_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
   end
 
   create_table "places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -88,6 +99,8 @@ ActiveRecord::Schema.define(version: 20200314043846) do
   add_foreign_key "comments", "users"
   add_foreign_key "companies", "reports"
   add_foreign_key "companies", "users"
+  add_foreign_key "likes", "companies"
+  add_foreign_key "likes", "users"
   add_foreign_key "places", "users"
   add_foreign_key "reports", "users"
 end

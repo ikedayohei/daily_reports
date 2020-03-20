@@ -25,7 +25,7 @@
 
   .company-box
    .company-name
-    %p [訪問先 登録]
+    %p [訪問先登録]
    .company-date
     = link_to   companies_path do
      =icon('fas', 'building', class: 'icon')
@@ -34,14 +34,14 @@
  .main-contents__2-content
   .report
    .report-title
-    %p『報告フォーム』
+    %p 報告フォーム
    = form_for [@report] do |f|
     =f.label :訪問日,class: "input-box-date-label"
     =f.label :必須, class: "input-box-date-label-h"
     =f.date_field :date, class: "input-box-date"
     =f.label :訪問先, class: "input-box-where-label"
     =f.label :必須, class: "input-box-where-label-h"
-    =f.text_field :where, class: "input-box-where"
+    =f.collection_select :company_ids, Company.all, :id, :name, {}, class:"input-box-where"
     =f.label :応対者, class: "input-box-responder-label"
     =f.label :必須, class: "input-box-responder-label-h"
     =f.text_field :reponder, class: "input-box-responder"
