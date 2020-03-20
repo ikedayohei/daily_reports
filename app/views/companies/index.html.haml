@@ -1,0 +1,97 @@
+.company
+
+ .main-header
+  %h1 Daily-Report
+ .company-contents
+  .company-data
+   .company-title
+    %tr
+     %th『登録フォーム』
+     %th
+      = link_to  root_path do
+       =icon('fas','share', class: 'icon')
+   .company-box
+    = form_for [@company] do |f|
+     =f.label :会社名 ,class: "input-box-name-label"
+     =f.text_field :name, class: "input-box-name"
+     =f.label :〒住所, class: "input-box-postcode-label"
+     =f.text_field :postcode, class: "input-box-postcode"
+     =f.label :電話番号, class: "input-box-phone_number-label"
+     =f.text_field :phone_number, class: "input-box-phone_number"
+     =f.label :資本金, class: "input-box-capital-label"
+     =f.text_field :capital, class: "input-box-capital"
+     =f.label :売上高, class: "sale-label"
+     =f.text_field :sale, class: "sale-text" 
+     =f.label :事業内容, class: "description-label"
+     =f.text_field :description, class: "description-text" 
+     =f.label :特徴, class: "characteristic-label"
+     =f.text_field :characteristic, class: "characteristic-text" 
+     =f.label :URL, class: "url-label"
+     =f.text_field :url, class: "url-text" 
+     =f.submit '登録', class: "company-input-box-btn", data: { confirm: "登録しますか？" } 
+
+
+  .company-lists
+   .company-list
+    %tr
+     %th ＜訪問先 一覧＞
+     %th
+      =icon('fas', 'building', class: 'icon')
+     %th 
+      = @plus
+     %th 件
+   .company-list-1
+    .pagi
+     =paginate(@data)
+    -@data .each do |company|
+     - if user_signed_in? && current_user.id == company.user_id
+      .link-box
+       = link_to company_path(company.id) , method: :delete, data: { confirm: "削除しますか？" } do
+        %th 削除
+       = link_to edit_company_path(company.id) do
+        %th 編集
+       = link_to company_path(company.id) do
+        %th 詳細
+    
+     %table.company-box-new
+      %tr
+       %th{:width => "40"} 登録者:
+       %th{:width => "50"} 
+        = company.user.name
+       %th{:width => "280"} 
+        = company.created_at.to_s(:datetime_jp)
+     %table.copmany-box{:border => "2"}
+      %tr
+       %th{:width => "150"} 会社名
+       %th{:width => "500"}
+        =company.name
+      %tr
+       %th 住所
+       %th
+        =company.postcode
+      %tr
+       %th 電話番号
+       %th
+        =company.phone_number
+      %tr
+       %th 資本金
+       %th
+        =company.capital
+      %tr
+       %th 売上高
+       %th 
+        =company.sale
+      %tr
+       %th 事業内容
+       %th 
+        =company.description
+      %tr
+       %th 特徴
+       %th 
+        =company.characteristic
+      %tr
+       %th URL
+       %th 
+        = text_url_to_link(h(company.url)).html_safe
+
+       

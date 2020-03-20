@@ -12,39 +12,39 @@
 }
 
 .show-contents {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
+  background: url("14-1.jpg");
+  background-size: cover;
 }
 .show-contents__left {
-  height: 100vh;
+  background-color: rgba(255,255,255,0.3);
+  height: 100%;
   width: 750px;
-  color: beige;
-  background-image: url("board-114656_1920-400x270-MM-100.jpg");
-  background-size: cover;
+  color: black;
   display: block;
   overflow: scroll;
-  padding-left: 80px;
-  color: rgba(253, 249, 249, 0.952);
   &__top {
   height: 50px;
-  width: 100%;
+  width: 600px;
   margin-bottom: 10px;
   font-size: 30px;
   display: flex;
     &__right {
     height: 50px;
-    width: 360px;
+    width: 600px;
     text-align: center;
     line-height: 80px;
     }
     &__left {
     height: 50px;
-    width: 100px;
+    width: 50px;
     line-height: 80px;
+    text-align: center;
     a {
       text-decoration:none;
-      color: rgba(253, 249, 249, 0.932);
+      color:blue;
       font-size: 2.5rem;
       cursor: pointer;
       &:hover {
@@ -56,8 +56,20 @@
     }
   }
   &__report {
-    height: 100%;
-    width: 500px;
+    height: 600px;
+    width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.983);
+    border: solid 2px black;
+   .show-pagi {
+     margin-left: 50px;
+   }
+   .show-link {
+     margin-left: 50px;
+   }
+   .show-comment {
+     margin-left: 50px;
+   }
     ul {
       float: left;
       margin-top: 5px;
@@ -70,7 +82,7 @@
       padding-right: ５px;
     }
     a {
-      color: beige;
+      color:rgb(34, 38, 243);
       text-decoration: none;
     }
     .icon {
@@ -82,23 +94,29 @@
     }
     .unicon {
       margin-top: 7px;
-      color: white;
+      color: black;
       padding-left: 5px;
     }
   }
   .report-box-new {
-    width: 450px;
+    width: 500px;
     margin-bottom: 2px;
-    
+    margin: 0 auto;
+  }
+
+  .report-box {
+    width: 500px;
+    margin-bottom: 5px;
+    background-color:white;
+    margin: 0 auto;
   }
 }
 
 .show-contents__right {
-  height: 100vh;
+  height: 100%;
+  background-color: rgba(255,255,255,0.3);
   width: calc(100vw - 600px );
   display: block;
-  background-image: url("unnamed.jpg");
-  background-size: cover;
   background-position: bottom;
   .show-title {
     height: 40px;
@@ -108,20 +126,23 @@
     margin-bottom: 10px;
     font-size: 20px;
     position: absolute;
-    padding-left: 150px;
+    padding-left: 110px;
   }
   .king {
     position: relative;
     height: 40px;
     width: 40px;
-    margin-left: 110px;
+    margin-left: 80px;
     font-size: 25px;
     line-height: 40px;
     color: gold;
   }
   .report-ranking {
-    margin: 0 auto;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 3px;
+    background-color: white;
+    margin-left: 50px;
+    
+  }
+  .report-ranking-box {
   }
 }

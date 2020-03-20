@@ -10,19 +10,18 @@
 .edit-main-contents {
   width: 100vw;
   height: 100vh;
-  background-image: url("texture171030IMGL0669_TP_V1.jpg");
+  background-image: url("14-1.jpg");
   background-size: cover;
 
 .edit-report-main {
    height: 600px;
    width: 100%;
    background-color: rgba(255,255,255,0.2);
+   display: flex;
+   justify-content: center;
    .edit {
     font-size: 30px;
     height: 50px;
-    width: 100%;
-    padding-left: 450px;
-    float: left;
     .edit-report-title {
       width: 180px;
       height: 30px;
@@ -33,8 +32,11 @@
       } 
     }
   .edit_report {
-    width: 100%;
-    height: 600px;
+    background-color: rgba(255, 255, 255, 0.938);
+    width: 500px;
+    margin: 0 auto;
+    border: 2px solid black;
+    
     .input-box-date {
        width: 200px;
        height: 25px;
@@ -115,6 +117,7 @@
       margin-left: 10px;
       width: 100px;
       height: 30px;
+      margin-bottom: 5px;
       appearance: none;
       border-radius: 5px;
       cursor: pointer;

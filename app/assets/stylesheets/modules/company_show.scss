@@ -1,0 +1,64 @@
+.sh-company{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-image: url("14-1.jpg");
+  background-size: cover;
+}
+
+.main-header {
+width: 100%;
+color: bisque;
+font-size: 40px;
+padding-left: 28px;
+height: 50px;
+background-color: rgba(0, 0, 0, 0.753);
+}
+
+.sh-company-contents {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ background-color: rgba(255,255,255,0.3);
+}
+.sh-company-data {
+flex: 1;
+.sh-company-title {
+  height: 50px;
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  line-height: 50px;
+}
+a {
+  text-decoration:none;
+  color: black;
+  font-size: 2.5rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    border-color: #59b1eb;
+    color: #59b1eb;
+  }
+  }
+}
+.sh-company-box-new {
+  height: 20px;
+  width: 530px;
+  font-size: 15px;
+  margin: 0 auto;
+  a {
+    font-size: 18px;
+    margin-right: 100px;
+  }
+}
+
+.sh-copmany-box {
+  background-color: rgba(255, 255, 255, 0.916);;
+  width: 530px;
+  height: 450px;
+  margin: 0 auto;
+  font-size: 18px;
+  
+}

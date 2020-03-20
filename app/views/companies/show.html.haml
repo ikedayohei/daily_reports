@@ -1,0 +1,56 @@
+.sh-company
+
+ .main-header
+  %h1 Daily-Report
+ .sh-company-contents
+  .sh-company-data
+   .sh-company-title
+    %tr
+     %th『会社 情報』
+     %th
+      = link_to  root_path do
+       =icon('fas','share', class: 'icon')
+    %table.sh-company-box-new
+     %tr
+      %th{:width => "60"} 登録者:
+      %th{:width => "80"} 
+       = @company.user.name
+      %th{:width => "250"} 
+       = @company.created_at.to_s(:datetime_jp)
+      %th{:width => "60"} いいね
+      %th{:id => "show_like_#{@company.id}"}
+       = render partial: 'likes/like', locals: {company: @company }
+
+    %table.sh-copmany-box{:border => "2"}
+     %tr
+      %th{:width => "150"} 会社名
+      %th{:width => "500"}
+       =@company.name
+     %tr
+      %th 住所
+      %th
+       =@company.postcode
+     %tr
+      %th 電話番号
+      %th
+       =@company.phone_number
+     %tr
+      %th 資本金
+      %th
+       =@company.capital
+     %tr
+      %th 売上高
+      %th 
+       =@company.sale
+     %tr
+      %th 事業内容
+      %th 
+       =@company.description
+     %tr
+      %th 特徴
+      %th 
+       =@company.characteristic
+     %tr
+      %th URL
+      %th 
+       = text_url_to_link(h(@company.url)).html_safe
