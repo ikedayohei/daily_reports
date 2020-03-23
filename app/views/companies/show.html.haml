@@ -2,14 +2,15 @@
 
  .main-header
   %h1 Daily-Report
+  - breadcrumb :company_show
+  = breadcrumbs separator: " &rsaquo; "
+
  .sh-company-contents
   .sh-company-data
    .sh-company-title
     %tr
      %th『会社 情報』
-     %th
-      = link_to  root_path do
-       =icon('fas','share', class: 'icon')
+
     %table.sh-company-box-new
      %tr
       %th{:width => "60"} 登録者:

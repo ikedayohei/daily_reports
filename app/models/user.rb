@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :name, presence: true
   
   has_many :reports, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
@@ -14,7 +15,7 @@ class User < ApplicationRecord
   end
   has_many :liked_compnies, through: :likes, source: :company
 
-  validates :name, presence: true
+  
 
   
 

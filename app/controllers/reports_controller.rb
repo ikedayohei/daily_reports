@@ -3,7 +3,7 @@ class ReportsController < ApplicationController
     @reports = Report.all.includes(:user)
     @report = Report.new
     @company = Company.all
-    
+    @company = Company.new
   end
 
   def new
@@ -47,6 +47,6 @@ class ReportsController < ApplicationController
 
   private
   def report_params
-    params.require(:report).permit(:text, :company_ids ,:reponder ,:companion, :date, places_attributes: [:where]).merge(user_id: current_user.id )
+    params.require(:report).permit(:text, :where ,:reponder ,:companion, :date ).merge(user_id: current_user.id)
   end
 end

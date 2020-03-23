@@ -21,6 +21,17 @@
   padding-left: 28px;
   height: 50px;
   background-color: rgba(0, 0, 0, 0.753);
+  display: flex;
+ .breadcrumbs {
+   height: 50px;
+   line-height: 50px;
+   font-size: 15px;
+   color: white;
+   margin-left: 30px;
+   a {
+     color: white;
+   }
+  }
 }
 
 .main-contents {
@@ -240,6 +251,12 @@
       .input-box-companion-label {
         margin-left: 10px;
         font-size: 13px;
+      }
+      .input-box-companion-label-h{
+        margin-left: 5px;
+        font-size: 13px;
+        background-color: rgb(161, 162, 167);
+        color: beige;
       }
       .report-text {
         border: 1px solid #ccc;

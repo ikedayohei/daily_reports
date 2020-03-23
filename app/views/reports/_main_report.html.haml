@@ -1,5 +1,6 @@
 .main-header
  %h1 Daily-Report
+  
 .main-contents
  .main-contents__1-content
   .user-name-box
@@ -41,11 +42,12 @@
     =f.date_field :date, class: "input-box-date"
     =f.label :訪問先, class: "input-box-where-label"
     =f.label :必須, class: "input-box-where-label-h"
-    =f.collection_select :company_ids, Company.all, :id, :name, {}, class:"input-box-where"
+    =f.text_field :where ,class: "input-box-where"
     =f.label :応対者, class: "input-box-responder-label"
     =f.label :必須, class: "input-box-responder-label-h"
     =f.text_field :reponder, class: "input-box-responder"
     =f.label :同行者, class: "input-box-responder-label"
+    =f.label :任意, class: "input-box-companion-label-h"
     =f.text_field :companion, class: "input-box-companion"
     =f.label :打合せ内容, class: "report-text-label"
     =f.label :必須, class: "report-text-label-h"

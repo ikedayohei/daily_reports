@@ -5,6 +5,11 @@ class CompaniesController < ApplicationController
     @data = Company.order("created_at DESC").page(params[:page]).per(3)
     @plus = Company.joins(:user).count(:id)
     @like = Like.new
+    @companies = Company.search(params[:keyword])
+     respond_to do |format|
+     format.html
+     format.json
+     end
   end
 
   def create

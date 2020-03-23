@@ -1,11 +1,10 @@
 .com-header
  %h1 Daily-Report
+ - breadcrumb :comment
+ = breadcrumbs separator: " &rsaquo; "
 
 .com-titles
  %p ＜日報＞
- .com-back
-  = link_to  root_path do
-   =icon('fas','share', class: 'icon')
 
 .com-contens
  .com-content-left
