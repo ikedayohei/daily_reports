@@ -1,12 +1,14 @@
 .edit-header
  %h1 Daily-Report
+ - breadcrumb :edit_report
+ = breadcrumbs separator: " &rsaquo; "
+
 
 .edit-main-contents
  .edit-report-main
   .edit
    %p『報告フォーム 編集』
-   .edit-report-title
-    %a.btn{:href => "/"} トップページへ戻る
+  
    = form_for [@report] do |f|
     =f.label :訪問日 ,class: "input-box-date-label"
     =f.date_field :date, class: "input-box-date"

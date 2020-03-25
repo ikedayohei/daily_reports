@@ -1,9 +1,10 @@
 .user-show-header
  %h1 Daily-Report
+ - breadcrumb :edit_user
+ = breadcrumbs separator: " &rsaquo; "
+
 .title
  %p [MY-page]
- .back
-  %a.btn{:href => "/"} トップページへ戻る
 
 .user-show-contents
  .user-show-contents-right

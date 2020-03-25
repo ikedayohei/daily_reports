@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'bookmarks/destroy'
 
+  get 'maps/index'
+
   devise_for :users
   root "reports#index"
   resources :reports do
@@ -17,5 +19,7 @@ Rails.application.routes.draw do
   resources :companies do
    resources :likes, only: [:create, :destroy]
   end
+  resources :maps,only: [:index]
   resources :users, only: [:show, :edit, :update]
+  
 end

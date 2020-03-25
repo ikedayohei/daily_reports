@@ -2,14 +2,15 @@
 
  .main-header
   %h1 Daily-Report
+  - breadcrumb :company_edit
+  = breadcrumbs separator: " &rsaquo; "
+
  .ed-company-contents
   .ed-company-data
    .ed-company-title
     %tr
      %th『編集 フォーム』
-     %th
-      = link_to  root_path do
-       =icon('fas','share', class: 'icon')
+
    .ed-company-box
     = form_for [@company] do |f|
      =f.label :会社名 ,class: "ed-input-box-name-label"

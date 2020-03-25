@@ -2,34 +2,46 @@
 
  .main-header
   %h1 Daily-Report
+  - breadcrumb :company
+  = breadcrumbs separator: " &rsaquo; "
+
  .company-contents
   .company-data
    .company-title
     %tr
      %th『登録フォーム』
-     %th
-      = link_to  root_path do
-       =icon('fas','share', class: 'icon')
    .company-box
     = form_for [@company] do |f|
      =f.label :会社名 ,class: "input-box-name-label"
+     =f.label :必須 ,class: "com-input-box-label"
      =f.text_field :name, class: "input-box-name"
      =f.label :〒住所, class: "input-box-postcode-label"
+     =f.label :必須 ,class: "com-input-box-label"
      =f.text_field :postcode, class: "input-box-postcode"
      =f.label :電話番号, class: "input-box-phone_number-label"
+     =f.label :必須 ,class: "com-input-box-label"
      =f.text_field :phone_number, class: "input-box-phone_number"
      =f.label :資本金, class: "input-box-capital-label"
+     =f.label :必須 ,class: "com-input-box-label"
      =f.text_field :capital, class: "input-box-capital"
      =f.label :売上高, class: "sale-label"
+     =f.label :必須 ,class: "com-input-box-label"
      =f.text_field :sale, class: "sale-text" 
      =f.label :事業内容, class: "description-label"
+     =f.label :必須 ,class: "com-input-box-label"
      =f.text_field :description, class: "description-text" 
      =f.label :特徴, class: "characteristic-label"
+     =f.label :任意, class: "com-input-box-label-h"
      =f.text_field :characteristic, class: "characteristic-text" 
      =f.label :URL, class: "url-label"
+     =f.label :任意, class: "com-input-box-label-h"
      =f.text_field :url, class: "url-text" 
      =f.submit '登録', class: "company-input-box-btn", data: { confirm: "登録しますか？" } 
-
+   .search-box
+    %p ＜訪問先 検索＞
+    =render "search"
+    .search-left
+     =icon("fas", "arrow-circle-up" ,class:'up')
 
   .company-lists
    .company-list
@@ -50,6 +62,8 @@
         %th 削除
        = link_to edit_company_path(company.id) do
         %th 編集
+     - if user_signed_in?
+      .link-show
        = link_to company_path(company.id) do
         %th 詳細
     
@@ -93,5 +107,5 @@
        %th URL
        %th 
         = text_url_to_link(h(company.url)).html_safe
-
+  
        

@@ -2,15 +2,14 @@
 
 .show-header
  %h1 Daily-Report
+ - breadcrumb :report
+ = breadcrumbs separator: " &rsaquo; "
 
 .show-contents
  .show-contents__left
   .show-contents__left__top
    .show-contents__left__top__right
     %p ＜日報一覧＞
-   .show-contents__left__top__left
-    = link_to  root_path do
-     =icon('fas','share', class: 'icon')
     
   .show-contents__left__report
    .show-pagi
@@ -63,15 +62,15 @@
    .report-ranking-box
     %table.report-ranking{:border => "2" }
      %tr
-      %th{:width => "100"}
+      %th{:width => "60"}
        第
        = i+1
        位
-      %th{:width => "100"} 名前
-      %th{:width => "100"}
+      %th{:width => "70"} 名前
+      %th{:width => "180"}
        = report.first
       %th{:width => "100"} 訪問件数
-      %th{:width => "100"}
+      %th{:width => "50"}
        = report.second
   .show-title
    %P [訪問先いいね ランキング]
@@ -80,15 +79,15 @@
   -@ranking.each_with_index do |ranking, i|
    %table.report-ranking{:border => "2" }
     %tr
-     %th{:width => "100"}
+     %th{:width => "60"}
       第
       = i+1
       位
-     %th{:width => "100"} 会社名
-     %th{:width => "100"}
+     %th{:width => "70"} 会社名
+     %th{:width => "180"}
       = ranking.first
      %th{:width => "100"} いいね数
-     %th{:width => "100"}
+     %th{:width => "50"}
       = ranking.second
   
 

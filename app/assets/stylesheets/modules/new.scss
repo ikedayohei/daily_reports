@@ -9,6 +9,18 @@
   font-size: 40px;
   padding-left: 28px;
   background-color: rgba(0, 0, 0, 0.877);
+  display: flex;
+ .breadcrumbs {
+   height: 50px;
+   line-height: 50px;
+   font-size: 15px;
+   color: white;
+   margin-left: 30px;
+   a {
+     color: white;
+   }
+  }
+
 }
 
 .show-contents {
@@ -28,31 +40,14 @@
   &__top {
   height: 50px;
   width: 600px;
-  margin-bottom: 10px;
-  font-size: 30px;
+  list-style: 50px;
+  font-size: 35px;
   display: flex;
     &__right {
     height: 50px;
     width: 600px;
     text-align: center;
-    line-height: 80px;
-    }
-    &__left {
-    height: 50px;
-    width: 50px;
-    line-height: 80px;
-    text-align: center;
-    a {
-      text-decoration:none;
-      color:blue;
-      font-size: 2.5rem;
-      cursor: pointer;
-      &:hover {
-        background-color: #fff;
-        border-color: #59b1eb;
-        color: #59b1eb;
-      }
-      }
+    line-height: 50px;
     }
   }
   &__report {

@@ -1,14 +1,13 @@
 class Report < ApplicationRecord
   belongs_to :user
-  has_many :companies
   has_many :bookmarks
   has_many :comments
 
   with_options presence: true do
     validates :text
-    validates :where
     validates :reponder
     validates :date
+    validates :where
   end
 
   def bookmark_by?(user)

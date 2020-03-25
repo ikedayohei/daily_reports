@@ -1,0 +1,6 @@
+.search-container
+  = icon("fas", "search", class: "icons")
+  = form_tag('/companies/', method: :get, placeholder:'') do
+    = text_field_tag :name, :'',id:'searching-form', placeholder:'検索 ', autocomplete:'off'
+  .result
+  .result-a
