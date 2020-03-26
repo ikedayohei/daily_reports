@@ -1,0 +1,59 @@
+.map-title
+ %span{:style => "color:blue"}>G 
+ %span{:style => "color:red"}>o
+ %span{:style => "color:yellow"}>o
+ %span{:style => "color:blue"}>g
+ %span{:style => "color:green"}>l
+ %span{:style => "color:red"}>e 
+ %span{:style => "color:black"}>  map
+ =icon("fab", "google" , class:"google")
+
+%input#address{:type => "textbox", :value => "住所" ,class: "address"}/
+%input{:onclick => "codeAddress()", :type => "button", :value => "検索" ,class:"sh-mp"}/
+
+#map
+:css
+  #map {
+    height: 450px;
+    width: 500px;
+    margin-left: 100px;
+    margin-top: 20px;
+  }
+:javascript
+  let map
+  
+  function initMap(){
+    geocoder = new google.maps.Geocoder()
+  
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 40.7828, lng:-73.9653},
+      zoom: 12,
+    });
+  
+    marker = new google.maps.Marker({
+      position:  {lat: 40.7828, lng:-73.9653},
+      map: map
+    });
+  }
+  let geocoder
+
+  function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });   
+  }
+
+
+
+
+%script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyCDHOAjve5JV9l1BpaPIWkHF-rOLsSzaKc&callback=initMap"}

@@ -1,0 +1,25 @@
+.edit-header
+ %h1 Daily-Report
+ - breadcrumb :edit_report
+ = breadcrumbs separator: " &rsaquo; "
+
+
+.edit-main-contents
+ .edit-report-main
+  .edit
+   %p『報告フォーム 編集』
+  
+   = form_for [@report] do |f|
+    =f.label :訪問日 ,class: "input-box-date-label"
+    =f.date_field :date, class: "input-box-date"
+    =f.label :訪問先, class: "input-box-where-label"
+    =f.text_field :where, class: "input-box-where"
+    =f.label :応対者, class: "input-box-responder-label"
+    =f.text_field :reponder, class: "input-box-responder"
+    =f.label :同行者, class: "input-box-responder-label"
+    =f.text_field :companion, class: "input-box-companion"
+    =f.label :打合せ内容, class: "report-text-label"
+    =f.text_area :text, class: "report-text" ,size: "50x7" 
+    =f.submit '更新', class: "edit-input-box-btn", data: { confirm: "更新しますか？" } 
+
+ 

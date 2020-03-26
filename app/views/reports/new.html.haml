@@ -1,0 +1,106 @@
+.show-wrapper
+
+.show-header
+ %h1 Daily-Report
+ - breadcrumb :report
+ = breadcrumbs separator: " &rsaquo; "
+
+.show-contents
+ .show-contents__left
+  .show-contents__left__top
+   .show-contents__left__top__right
+    %p ＜日報一覧＞
+    
+  .show-contents__left__report
+   .show-pagi
+    = paginate(@reports)
+   -@reports .each do |report|
+    - if user_signed_in? && current_user.id == report.user_id
+     .show-link
+      = link_to report_path(report.id) , method: :delete, data: { confirm: "削除しますか？" } do
+       %ul 削除
+      = link_to edit_report_path(report.id) do
+       %li 編集
+    .show-comment
+     = link_to report_path(report.id) do
+      %li コメントする
+     = render 'reports/bookmark_area', report: report
+    %table.report-box-new
+     %th{:width => "50"} 投稿者:
+     %th{:width => "400"}
+      = report.user.name
+      = report.created_at.to_s(:datetime_jp)
+    %table.report-box{:border => "2" }
+     %tr
+     %th{:width => "200"} 訪問日
+     %th{:width => "600"}
+      =report.date
+     %tr
+      %th 訪問先
+      %th
+       =report.where
+     %tr
+      %th 応対者
+      %th
+       =report.reponder
+     %tr
+      %th 同行者
+      %th
+       =report.companion
+     %tr
+      %th 打合せ内容
+      %th 
+       =report.text
+    
+    
+ .show-contents__right
+  .show-title
+   %P [営業訪問件数 ランキング]
+  .king
+   =icon('fas','crown', class: 'icon')
+  -@sum.each_with_index do |report, i|
+   .report-ranking-box
+    %table.report-ranking{:border => "2" }
+     %tr
+      %th{:width => "60"}
+       第
+       = i+1
+       位
+      %th{:width => "70"} 名前
+      %th{:width => "180"}
+       = report.first
+      %th{:width => "100"} 訪問件数
+      %th{:width => "50"}
+       = report.second
+  .show-title
+   %P [訪問先いいね ランキング]
+  .king
+   =icon('fas','crown', class: 'icon')
+  -@ranking.each_with_index do |ranking, i|
+   %table.report-ranking{:border => "2" }
+    %tr
+     %th{:width => "60"}
+      第
+      = i+1
+      位
+     %th{:width => "70"} 会社名
+     %th{:width => "180"}
+      = ranking.first
+     %th{:width => "100"} いいね数
+     %th{:width => "50"}
+      = ranking.second
+  
+
+
+ 
+
+   
+  
+  
+   
+    
+
+  
+
+
+  
