@@ -51,8 +51,11 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'unicorn', '5.4.1'
 end
+  
+
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -70,3 +73,5 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons' 
 gem "gretel"
 gem 'geocoder'
+
+
