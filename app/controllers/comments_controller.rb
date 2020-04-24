@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
       format.json 
     end
  
+    
   end
 
   def destroy

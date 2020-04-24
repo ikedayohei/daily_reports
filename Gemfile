@@ -39,6 +39,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'sqlite3' 
   gem 'byebug', platform: :mri
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do

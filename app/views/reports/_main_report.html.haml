@@ -37,6 +37,7 @@
    .report-title
     %p 報告フォーム
    = form_for [@report] do |f|
+    = render 'layouts/error', model: f.object
     =f.label :訪問日,class: "input-box-date-label"
     =f.label :必須, class: "input-box-date-label-h"
     =f.date_field :date, class: "input-box-date"
