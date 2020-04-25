@@ -5,7 +5,14 @@
       %h5 新規アカウントの作成
       = render "devise/shared/links"
     .account-page__inner--right.user-form
+      .google-box
+        =image_tag "1497553309-101_84843.png",class:"google-box__google-img"
+        .google-box__link
+          = link_to 'Googleでサインイン', user_google_oauth2_omniauth_authorize_path, method: :post
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        - if @sns_id.present?
+          = hidden_field_tag :sns_auth, true
+        - else
         = devise_error_messages!
         .field
           .field-label

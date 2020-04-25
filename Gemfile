@@ -69,5 +69,7 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons' 
 gem "gretel"
 gem 'geocoder'
-
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
 

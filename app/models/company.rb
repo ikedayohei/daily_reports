@@ -12,6 +12,7 @@ class Company < ApplicationRecord
     validates :capital
     validates :sale
     validates :description
+  end
 
   def self.search(input)
     return nil if input == ""

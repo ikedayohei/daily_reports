@@ -18,6 +18,26 @@
     }
   }
 
+  .google-box {
+    height: 50px;
+    border: solid 1px rgb(231, 229, 229);
+    position: relative;
+    &__google-img{
+    height: 50px;
+    width: 50px;
+    }
+    &__link {
+    position: absolute;
+    top :10px;
+    left: 50px;
+    font-size: 20px;
+    }
+    a {
+      text-decoration: none;
+    }
+
+  }
+
   .account-page__header {
     h2 {
       margin-bottom: 10px;
