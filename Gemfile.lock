@@ -236,8 +236,6 @@ GEM
     sassc (2.3.0)
       ffi (~> 1.9)
     sexp_processor (4.14.1)
-    simple_calendar (2.3.0)
-      rails (>= 3.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -298,7 +296,6 @@ DEPENDENCIES
   rails (~> 5.0.7, >= 5.0.7.2)
   rspec-rails
   sass-rails (~> 5.0)
-  simple_calendar (~> 2.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
@@ -307,4 +304,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   2.1.4
+   2.0.2
