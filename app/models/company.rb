@@ -12,9 +12,9 @@ class Company < ApplicationRecord
     validates :capital
     validates :sale
     validates :description
-
-    
   end
+
+  scope :company_new, -> {(order("created_at DESC"))}
 
   def self.search(input)
     return nil if input == ""

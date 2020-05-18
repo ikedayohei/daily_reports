@@ -1,7 +1,6 @@
 .show-wrapper
 
-.show-header
- %h1 Daily-Report
+ =render "header"
  - breadcrumb :report
  = breadcrumbs separator: " &rsaquo; "
 
@@ -15,7 +14,7 @@
    .show-pagi
     = paginate(@reports)
    -@reports .each do |report|
-    - if user_signed_in? && current_user.id == report.user_id
+    - if current_user_has?(report)
      .show-link
       = link_to report_path(report.id) , method: :delete, data: { confirm: "削除しますか？" } do
        %ul 削除
@@ -25,32 +24,8 @@
      = link_to report_path(report.id) do
       %li コメントする
      = render 'reports/bookmark_area', report: report
-    %table.report-box-new
-     %th{:width => "50"} 投稿者:
-     %th{:width => "400"}
-      = report.user.name
-      = report.created_at.to_s(:datetime_jp)
-    %table.report-box{:border => "2" }
-     %tr
-     %th{:width => "200"} 訪問日
-     %th{:width => "600"}
-      =report.date
-     %tr
-      %th 訪問先
-      %th
-       =report.where
-     %tr
-      %th 応対者
-      %th
-       =report.reponder
-     %tr
-      %th 同行者
-      %th
-       =report.companion
-     %tr
-      %th 打合せ内容
-      %th 
-       =report.text
+     = render partial: "reports/report_display", locals:{report: report}
+     
     
     
  .show-contents__right

@@ -1,44 +1,49 @@
 class ReportsController < ApplicationController
+  before_action :set_report, only:[:show, :edit, :update, :destory]
+
   def index
-    @reports = Report.all.includes(:user)
     @report = Report.new
-    @company = Company.all
-    @company = Company.new
   end
 
   def new
-    @reports = Report.all
-    @reports = Report.order("created_at DESC").page(params[:page]).per(3)
-    @sum = Report.joins(:user).group("users.name").order("count_all DESC").count
-    @like =Like.all
-    @ranking = Like.joins(:company).group("companies.name").order("count_all DESC").count
+    @reports = Report.includes(:user).report_new.page(params[:page]).per(3)
+    @sum = Report.joins(:user).group("users.name").ranking.count
+    @like =Like.all.includes(:company)
+    @ranking = Like.joins(:company).group("companies.name").ranking.count
   end
 
   def create
-   @report = Report.create(report_params)
-   redirect_to new_report_path(current_user.id)
+   @report = Report.new(report_params)
+   if @report.save
+    redirect_to new_report_path(current_user.id)
+   else
+    render :index, :notice => "登録されていません"
+   end
+
   end
 
   def show
-    @report = Report.find(params[:id])
-    @comments = @report.comments
+    @comments = @report.comments.includes(:user)
     @comment = Comment.new
   end
 
   def edit
-    @report = Report.find(params[:id])
   end
 
   def update
-    report = Report.find(params[:id])
-    report.update(report_params)
-    redirect_to new_report_path(current_user.id)
+    if @report.update(report_params)
+     redirect_to new_report_path(current_user.id)
+    else
+     render :edit
+    end
   end
 
-  def destroy
-    report = Report.find(params[:id])
-    report.destroy
-    redirect_to root_path
+  def destory
+    if @report.destory
+     redirect_to root_path
+    else
+     render :show
+    end
   end
   
   def bookmarks
@@ -49,4 +54,9 @@ class ReportsController < ApplicationController
   def report_params
     params.require(:report).permit(:text, :where ,:reponder ,:companion, :date ).merge(user_id: current_user.id)
   end
+
+  def set_report
+   @report = Report.find(params[:id])
+  end
+
 end

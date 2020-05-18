@@ -9,6 +9,9 @@ class Report < ApplicationRecord
     validates :date
     validates :where
   end
+  
+  scope :report_new, -> { order("created_at DESC")} 
+  scope :ranking, -> { order("count_all DESC")}
 
   def bookmark_by?(user)
     bookmarks.where(user_id: user.id).exists?

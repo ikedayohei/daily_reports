@@ -1,5 +1,5 @@
-.main-header
- %h1 Daily-Report
+.header
+ =render "header"
   
 .main-contents
  .main-contents__1-content
@@ -36,28 +36,11 @@
   .report
    .report-title
     %p 報告フォーム
-   = form_for [@report] do |f|
-    = render 'layouts/error', model: f.object
-    =f.label :訪問日,class: "input-box-date-label"
-    =f.label :必須, class: "input-box-date-label-h"
-    =f.date_field :date, class: "input-box-date"
-    =f.label :訪問先, class: "input-box-where-label"
-    =f.label :必須, class: "input-box-where-label-h"
-    =f.text_field :where ,class: "input-box-where"
-    =f.label :応対者, class: "input-box-responder-label"
-    =f.label :必須, class: "input-box-responder-label-h"
-    =f.text_field :reponder, class: "input-box-responder"
-    =f.label :同行者, class: "input-box-responder-label"
-    =f.label :任意, class: "input-box-companion-label-h"
-    =f.text_field :companion, class: "input-box-companion"
-    =f.label :打合せ内容, class: "report-text-label"
-    =f.label :必須, class: "report-text-label-h"
-    =f.text_area :text, class: "report-text" ,size: "50x10" 
-    =f.submit '送信', class: "input-box-btn" 
+    = form_for [@report] do |f|
+     =render partial: "form", locals: { f: f}
 
  .main-contents__3-content
   .main-contents__3-content__calendar
  
- 
-.footer
+
  
