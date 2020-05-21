@@ -1,0 +1,21 @@
+%table.report-box-show{:border => "3"}
+  %tr
+    %th{:width => "200"} 訪問日
+    %th{:width => "600"}
+      =report.date
+  %tr
+    %th 訪問先   
+    %th
+      =report.where
+  %tr
+    %th 応対者
+    %th
+      =report.reponder
+  %tr
+    %th 同行者
+    %th
+      =report.companion
+  %tr
+  %th 打合せ内容
+  %th 
+    =report.text

@@ -1,10 +1,6 @@
-.com-header
- %h1 Daily-Report
- - breadcrumb :comment
- = breadcrumbs separator: " &rsaquo; "
-
-.com-titles
- %p ＜日報＞
+=render "header"
+- breadcrumb :comment
+= render "layouts/breadcrumbs"
 
 .com-contens
  .com-content-left
@@ -17,43 +13,15 @@
      =f.submit 'コメントする', class: "com-input-box-btn", data: { confirm: "コメントしますか？" } 
   
  .com-contents-right
-  %table.com-report-box-new
-   %tr
-    %th 投稿者:
-    %th
-     = @report.user.name
-   %tr
-    %th 投稿日:
-    %th
-     = @report.created_at.to_s(:datetime_jp)
-  %table.com-report-box{:border => "2"}
-   %tr
-    %th{:width => "200"} 訪問日
-    %th{:width => "600"}
-     =@report.date
-    %tr
-     %th 訪問先
-     %th
-      =@report.where
-    %tr
-     %th 応対者
-     %th
-      =@report.reponder
-     %tr
-      %th 同行者
-      %th
-       =@report.companion
-     %tr
-      %th 打合せ内容
-      %th 
-       =@report.text
-        
+  =render partial: "reports/report_display", locals:{report: @report} 
+
   .comments
    %p ＜コメント一覧＞
    -@comments.each do |comment|
     .comments-boxes
-    = link_to report_comment_path(comment.report.id, comment.id) , method: :delete, data: { confirm: "削除しますか？" } do
-     =icon('far','trash-alt', class: 'icon')
+    - if current_user_has?(comment)
+     = link_to report_comment_path(comment.report.id, comment.id) , method: :delete, data: { confirm: "削除しますか？" } do
+      =icon('far','trash-alt', class: 'icon')
     %table.comment-box
      %tr
       %th 投稿者:

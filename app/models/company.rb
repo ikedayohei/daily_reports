@@ -14,6 +14,8 @@ class Company < ApplicationRecord
     validates :description
   end
 
+  scope :company_new, -> {(order("created_at DESC"))}
+
   def self.search(input)
     return nil if input == ""
     Company.where(['name LIKE(?) or postcode LIKE(?) or description LIKE(?) or characteristic LIKE(?)', "%#{input}%","%#{input}%" ,"%#{input}%" ,"%#{input}%"] ).limit(5)

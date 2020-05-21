@@ -1,10 +1,6 @@
-.user-show-header
- %h1 Daily-Report
- - breadcrumb :edit_user
- = breadcrumbs separator: " &rsaquo; "
-
-.title
- %p [MY-page]
+=render "reports/header"
+- breadcrumb :edit_user
+= render "layouts/breadcrumbs"
 
 .user-show-contents
  .user-show-contents-right
@@ -56,24 +52,4 @@
      %li 編集
     %th
      =report.created_at.to_s(:datetime_jp)
-    %table.report-box-show{:border => "3"}
-     %tr
-     %th{:width => "200"} 訪問日
-     %th{:width => "600"}
-      =report.date
-     %tr
-     %th 訪問先   
-     %th
-      =report.where
-     %tr
-     %th 応対者
-     %th
-      =report.reponder
-     %tr
-     %th 同行者
-     %th
-      =report.companion
-     %tr
-     %th 打合せ内容
-     %th 
-      =report.text
+     =render partial: "reports/report_display", locals:{report: report}

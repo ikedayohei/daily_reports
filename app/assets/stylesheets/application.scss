@@ -1,9 +1,9 @@
-@import "reset";
+@import "base/reset";
+@import "base/base";
 @import "modules/reports";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/user";
-@import "simple_calendar";
 @import "modules/show.scss";
 @import "modules/new.scss";
 @import "modules/destroy.scss";
@@ -13,4 +13,8 @@
 @import "modules/company_edit.scss";
 @import "modules/company_show.scss";
 @import "modules/map.scss";
-
+@import "modules/_breadcrumbs.scss";
+@import "modules/_header.scss";
+@import "modules/_form.scss";
+@import "modules/_report_display.scss";
+@import "modules/_company_form.scss"

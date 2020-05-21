@@ -1,8 +1,3 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-}
-
 .wrapper {
   height: 100vh;
   width: 100vw;
@@ -14,26 +9,6 @@
   color: rgba(20, 15, 8, 0.904);
 }
 
-.main-header {
-  width: 100%;
-  color: bisque;
-  font-size: 40px;
-  padding-left: 28px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.753);
-  display: flex;
- .breadcrumbs {
-   height: 50px;
-   line-height: 50px;
-   font-size: 15px;
-   color: white;
-   margin-left: 30px;
-   a {
-     color: white;
-   }
-  }
-}
-
 .main-contents {
   width: 100%;
   height: 100%;
@@ -41,7 +16,7 @@
   display: flex;
   justify-content: space-around;
   &__1-content {
-    width: 450px;
+    width: 300px;
     height: 100%;
     .user-name-box {
       width: 100%;
@@ -50,12 +25,17 @@
       display: flex;
      .user-name-box-right {
        height: 100px;
-       width: 150px;
+       width: 200px;
        text-align: right;
        font-size: 17px;
        line-height: 100px;
+       position: relative;
+       padding-right: 50px;
+
       }
      .user-name-box-user {
+       position: absolute;
+       left: 245px;
        height: 100px;
        line-height: 100px;
        width: 100px;
@@ -157,11 +137,9 @@
      .report-title {
         width: 200px;
         height: 35px;
-        padding-left: 10px;
         font-size: 25px;
         line-height: 30px;
         margin-top: 5px;
-        margin-bottom: 10px;
         background-color: rgba(255,255,255,0.9);
         border: 2px solid black;
      } 
@@ -169,147 +147,12 @@
       width: 450px;
       border: 2px solid black;
       background-color: rgba(255,255,255,0.9);
-      .input-box-date {
-         width: 200px;
-         height: 30px;
-         appearance: none;
-         border-radius: 5px;
-         padding: 5px;
-         margin-left: 10px;
-         margin-top: 5px;
-         display: block;
-         margin-bottom: 10px;
-         border: 1px solid rgb(19, 22, 19);
-  
-         }
-      .input-box-date-label{
-        margin-left: 10px;
-        font-size: 13px;
-      }
-      .input-box-date-label-h{
-        margin-left: 5px;
-        font-size: 13px;
-        background-color: rgb(20, 73, 220);
-        color: beige;
-      }
-      .input-box-where{
-        width: 200px;
-        height: 30px;
-        border: 1px solid #ccc;
-        appearance: none;
-        border-radius: 5px;
-        padding: 5px;
-        margin-left: 10px;
-        margin-bottom: 10px;
-        border: 1px solid rgb(19, 22, 19);
-        display: block;
-      }
-      .input-box-where-label {
-        margin-left: 10px;
-        font-size: 13px;
-      }
-      .input-box-where-label-h{
-        margin-left: 5px;
-        font-size: 13px;
-        background-color: rgb(20, 73, 220);
-        color: beige;
-      }
-      .input-box-responder {
-        width: 200px;
-        height: 30px;
-        border: 1px solid #ccc;
-        appearance: none;
-        border-radius: 5px;
-        padding: 5px;
-        margin-left: 10px;
-        margin-bottom: 10px;
-        display: block;
-        border: 1px solid rgb(19, 22, 19);
-      }
-      .input-box-responder-label {
-        margin-left: 10px;
-        font-size: 13px;
-      }
-      .input-box-responder-label-h{
-        margin-left: 5px;
-        font-size: 13px;
-        background-color: rgb(20, 73, 220);
-        color: beige;
-      }
-      .input-box-companion {
-        width: 200px;
-        height: 30px;
-        border: 1px solid #ccc;
-        appearance: none;
-        border-radius: 5px;
-        padding: 5px;
-        margin-left: 10px;
-        margin-bottom: 10px;
-        display: block;
-        border: 1px solid rgb(19, 22, 19);
-      }
-      .input-box-companion-label {
-        margin-left: 10px;
-        font-size: 13px;
-      }
-      .input-box-companion-label-h{
-        margin-left: 5px;
-        font-size: 13px;
-        background-color: rgb(161, 162, 167);
-        color: beige;
-      }
-      .report-text {
-        border: 1px solid #ccc;
-        appearance: none;
-        border-radius: 5px;
-        padding: 5px;
-        margin-left: 10px;
-        margin-bottom: 10px;
-        display: block;
-        white-space: pre-line;
-        word-break: break-all;
-        border: 1px solid rgb(19, 22, 19);
-      }
-      .report-text-label {
-        margin-left: 10px;
-        font-size: 13px;
-      }
-      .report-text-label-h{
-        margin-left: 5px;
-        font-size: 13px;
-        background-color: rgb(20, 73, 220);
-        color: beige;
-      }
-      .input-box-btn {
-        background-color: #333;
-        border: 2px solid #333;
-        color: #fff;
-        margin-left: 10px;
-        width: 100px;
-        height: 30px;
-        margin-bottom: 5px;
-        appearance: none;
-        border-radius: 5px;
-        cursor: pointer;
-        &:hover {
-          background-color: #fff;
-          border-color: #59b1eb;
-          color: #59b1eb
-        }
-       }
+      margin-top: 15px;
+      
      }
    }
   }
-  &__3-content {
-  width: calc(100vw - 900px);
-  margin-right: 50px;
-    &__calendar {
-    text-align: center;
-    width: 100%;
-    margin-top: 10px;
-    margin-right: 90px;
-    }
-  }
+
 }
 
 

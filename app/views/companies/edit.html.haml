@@ -1,9 +1,7 @@
 .edit-company
-
- .main-header
-  %h1 Daily-Report
-  - breadcrumb :company_edit
-  = breadcrumbs separator: " &rsaquo; "
+ =render "reports/header"
+ - breadcrumb :company_edit
+ = render "layouts/breadcrumbs"
 
  .ed-company-contents
   .ed-company-data
@@ -13,20 +11,5 @@
 
    .ed-company-box
     = form_for [@company] do |f|
-     =f.label :会社名 ,class: "ed-input-box-name-label"
-     =f.text_field :name, class: "ed-input-box-name"
-     =f.label :〒住所, class: "ed-input-box-postcode-label"
-     =f.text_field :postcode, class: "ed-input-box-postcode"
-     =f.label :電話番号, class: "ed-input-box-phone_number-label"
-     =f.text_field :phone_number, class: "ed-input-box-phone_number"
-     =f.label :資本金, class: "ed-input-box-capital-label"
-     =f.text_field :capital, class: "ed-input-box-capital"
-     =f.label :売上高, class: "ed-sale-label"
-     =f.text_field :sale, class: "ed-sale-text" 
-     =f.label :事業内容, class: "ed-description-label"
-     =f.text_field :description, class: "ed-description-text" 
-     =f.label :特徴, class: "ed-characteristic-label"
-     =f.text_field :characteristic, class: "ed-characteristic-text" 
-     =f.label :URL, class: "ed-url-label"
-     =f.text_field :url, class: "ed-url-text" 
-     =f.submit '更新', class: "ed-company-input-box-btn", data: { confirm: "更新しますか？" } 
+     =render partial: "company_form", locals: { f: f}
+     
