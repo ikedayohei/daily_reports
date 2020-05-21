@@ -1,9 +1,7 @@
 .sh-company
-
- .main-header
-  %h1 Daily-Report
-  - breadcrumb :company_show
-  = breadcrumbs separator: " &rsaquo; "
+ =render "reports/header"
+ - breadcrumb :company_show
+ =render "layouts/breadcrumbs"  
 
  .sh-company-contents
   .sh-company-map

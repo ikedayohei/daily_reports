@@ -1,11 +1,6 @@
-.user-show-header
- =render "reports/header"
- .bankuzu
-  - breadcrumb :edit_user
-  = breadcrumbs separator: " &rsaquo; "
-
-.title
- %p [MY-page]
+=render "reports/header"
+- breadcrumb :edit_user
+= render "layouts/breadcrumbs"
 
 .user-show-contents
  .user-show-contents-right

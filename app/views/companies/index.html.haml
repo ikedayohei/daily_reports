@@ -1,9 +1,7 @@
 .company
-
- .main-header
-  %h1 Daily-Report
-  - breadcrumb :company
-  = breadcrumbs separator: " &rsaquo; "
+ =render "reports/header"
+ - breadcrumb :company
+ = render "layouts/breadcrumbs"
 
  .company-contents
   .company-data
@@ -12,31 +10,7 @@
      %th『登録フォーム』
    .company-box
     = form_for [@company] do |f|
-     =f.label :会社名 ,class: "input-box-name-label"
-     =f.label :必須 ,class: "com-input-box-label"
-     =f.text_field :name, class: "input-box-name"
-     =f.label :〒住所, class: "input-box-postcode-label"
-     =f.label :必須 ,class: "com-input-box-label"
-     =f.text_field :postcode, class: "input-box-postcode"
-     =f.label :電話番号, class: "input-box-phone_number-label"
-     =f.label :必須 ,class: "com-input-box-label"
-     =f.text_field :phone_number, class: "input-box-phone_number"
-     =f.label :資本金, class: "input-box-capital-label"
-     =f.label :必須 ,class: "com-input-box-label"
-     =f.text_field :capital, class: "input-box-capital"
-     =f.label :売上高, class: "sale-label"
-     =f.label :必須 ,class: "com-input-box-label"
-     =f.text_field :sale, class: "sale-text" 
-     =f.label :事業内容, class: "description-label"
-     =f.label :必須 ,class: "com-input-box-label"
-     =f.text_field :description, class: "description-text" 
-     =f.label :特徴, class: "characteristic-label"
-     =f.label :任意, class: "com-input-box-label-h"
-     =f.text_field :characteristic, class: "characteristic-text" 
-     =f.label :URL, class: "url-label"
-     =f.label :任意, class: "com-input-box-label-h"
-     =f.text_field :url, class: "url-text" 
-     =f.submit '登録', class: "company-input-box-btn", data: { confirm: "登録しますか？" } 
+     =render partial: "company_form", locals: { f: f}
    .search-box
     %p ＜訪問先 検索＞
     =render "search"
@@ -56,7 +30,7 @@
     .pagi
      =paginate(@data)
     -@data .each do |company|
-     - if user_signed_in? && current_user.id == company.user_id
+     - if current_user_has?(company)
       .link-box
        = link_to company_path(company.id) , method: :delete, data: { confirm: "削除しますか？" } do
         %th 削除

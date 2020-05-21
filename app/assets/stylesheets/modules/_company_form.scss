@@ -1,0 +1,174 @@
+.input-box-name {
+  width: 300px;
+  height: 30px;
+  appearance: none;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 5px;
+  border: 1px solid rgb(19, 22, 19);
+
+  }
+.input-box-name-label{
+ margin-left: 60px;
+ font-size: 13px;
+}
+.com-input-box-label{
+ margin-left: 5px;
+ font-size: 13px;
+ background-color: rgb(20, 73, 220);
+ color: beige;
+}
+.input-box-postcode {
+ width: 300px;
+ height: 30px;
+ appearance: none;
+ border-radius: 5px;
+ margin: 0 auto;
+ margin-bottom: 5px;
+ border: 1px solid rgb(19, 22, 19);
+ display: block;
+}
+.input-box-postcode-label {
+ margin-left: 60px;
+ font-size: 13px;
+}
+.com-input-box-label-h{
+ margin-left: 5px;
+ font-size: 13px;
+ background-color: rgb(161, 162, 167);
+ color: beige;
+}
+.input-box-phone_number {
+ width: 300px;
+ height: 30px;
+ appearance: none;
+ border-radius: 5px;
+ margin: 0 auto;
+ margin-bottom: 5px;
+ display: block;
+ border: 1px solid rgb(19, 22, 19);
+}
+.input-box-phone_number-label {
+ margin-left: 60px;
+ font-size: 13px;
+}
+.input-box-responder-label-h{
+ margin-left: 5px;
+ font-size: 13px;
+ background-color: rgb(20, 73, 220);
+ color: beige;
+}
+.input-box-capital {
+ width: 300px;
+ height: 30px;
+ appearance: none;
+ border-radius: 5px;
+ margin: 0 auto;
+ margin-bottom: 5px;
+ display: block;
+ border: 1px solid rgb(19, 22, 19);
+}
+.input-box-capital-label {
+ margin-left: 60px;
+ font-size: 13px;
+}
+.sale-text {
+ width: 300px;
+ height: 30px;
+ appearance: none;
+ border-radius: 5px;
+ margin: 0 auto;
+ margin-bottom: 5px;
+ display: block;
+ border: 1px solid rgb(19, 22, 19);
+}
+.sale-label {
+ margin-left: 60px;
+ font-size: 13px;
+}
+.sale-label-h{
+ margin-left: 5px;
+ font-size: 13px;
+ background-color: rgb(20, 73, 220);
+ color: beige;
+}
+.characteristic-text {
+ width: 300px;
+ height: 30px;
+ appearance: none;
+ border-radius: 5px;
+ margin: 0 auto;
+ margin-bottom: 5px;
+ display: block;
+ border: 1px solid rgb(19, 22, 19);
+}
+.characteristic-label {
+ margin-left: 60px;
+ font-size: 13px;
+}
+.characteristic-label-h{
+ margin-left: 5px;
+ font-size: 13px;
+ background-color: rgb(20, 73, 220);
+ color: beige;
+}
+.description-text {
+ width: 300px;
+ height: 30px;
+ appearance: none;
+ border-radius: 5px;
+ padding: 5px;
+ margin: 0 auto;
+ margin-bottom: 5px;
+ display: block;
+ border: 1px solid rgb(19, 22, 19);
+}
+.description-label {
+ margin-left: 60px;
+ font-size: 13px;
+}
+.report-text-label-h{
+ margin-left: 5px;
+ font-size: 13px;
+ background-color: rgb(20, 73, 220);
+ color: beige;
+}
+.url-text {
+ width: 300px;
+ height: 30px;
+ appearance: none;
+ border-radius: 5px;
+ padding: 5px;
+ margin: 0 auto;
+ margin-bottom: 10px;
+ display: block;
+ border: 1px solid rgb(19, 22, 19);
+}
+.url-label {
+ margin-left: 60px;
+ font-size: 13px;
+}
+.report-text-label-h{
+ margin-left: 5px;
+ font-size: 13px;
+ background-color: rgb(20, 73, 220);
+ color: beige;
+}
+.company-input-box-btn {
+ margin-left: 140px;
+ background-color: #333;
+ border: 2px solid #333;
+ color: #fff;
+ width: 100px;
+ height: 30px;
+ appearance: none;
+ border-radius: 5px;
+ margin-bottom: 5px;
+ cursor: pointer;
+ &:hover {
+   background-color: #fff;
+   border-color: #59b1eb;
+   color: #59b1eb
+ }
+}

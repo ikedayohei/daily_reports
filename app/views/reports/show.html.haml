@@ -1,10 +1,6 @@
-.header
- =render "header"
- - breadcrumb :comment
- = breadcrumbs separator: " &rsaquo; "
-
-.com-titles
- %p ＜日報＞
+=render "header"
+- breadcrumb :comment
+= render "layouts/breadcrumbs"
 
 .com-contens
  .com-content-left
