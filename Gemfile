@@ -37,7 +37,6 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3' 
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
@@ -53,9 +52,9 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.18.4'
 end
-
+  
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -63,7 +62,7 @@ gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'rspec-rails'
 gem 'devise'
-gem 'simple_calendar', '~> 2.0'
+#gem 'simple_calendar', '~> 2.0'
 gem 'chartkick'
 gem 'pry-rails'
 gem 'kaminari'
@@ -72,3 +71,7 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons' 
 gem "gretel"
 gem 'geocoder'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+
