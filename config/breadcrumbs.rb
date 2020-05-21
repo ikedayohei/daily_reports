@@ -22,7 +22,6 @@ crumb :comment do
   parent :report
 end
 
-
 crumb :edit_report do
   link "編集", report_path
   parent :report
@@ -37,8 +36,6 @@ crumb :company_show do
   link "詳細", company_path
   parent :company
 end
-
-
 
 # crumb :projects do
 #   link "Projects", projects_path
