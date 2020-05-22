@@ -25,7 +25,7 @@ Things you may want to cover:
 * ...
 
 # アプリ名
-  "daily_reports"
+  "daily_report"
 
 # 概要
   営業日報・訪問先を登録し共有できるアプリ<br>
