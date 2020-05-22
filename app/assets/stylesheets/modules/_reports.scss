@@ -14,8 +14,8 @@
   height: 100%;
   background-color: rgba(255,255,255,0.6);
   display: flex;
-  justify-content: space-around;
   &__1-content {
+    flex: 1;
     width: 300px;
     height: 100%;
     .user-name-box {
@@ -35,7 +35,7 @@
       }
      .user-name-box-user {
        position: absolute;
-       left: 245px;
+       left: 150px;
        height: 100px;
        line-height: 100px;
        width: 100px;
@@ -131,6 +131,7 @@
   &__2-content {
     width: 600px;
     height: 100%;
+    flex: 2;
   .report {
      height: 550px;
      width: 100%;
@@ -148,11 +149,9 @@
       border: 2px solid black;
       background-color: rgba(255,255,255,0.9);
       margin-top: 15px;
-      
      }
    }
   }
-
 }
 
 

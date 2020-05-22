@@ -14,8 +14,8 @@ class CompaniesController < ApplicationController
   end
 
   def create
+    @company = Company.new(company_params)
     if @company.save
-      @company = Company.new(company_params)
       redirect_to companies_path
     else 
       render :index, :notice => "登録されていません"

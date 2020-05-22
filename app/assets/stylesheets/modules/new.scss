@@ -6,11 +6,9 @@
   height: 100%;
   width: 100%;
   display: flex;
-  background: url("14-1.jpg");
-  background-size: cover;
+  background-color: rgba(149, 189, 212, 0.06);
 }
 .show-contents__left {
-  background-color: rgba(255,255,255,0.3);
   height: 670px;
   width: 750px;
   color: black;
@@ -33,7 +31,7 @@
     height: 600px;
     width: 600px;
     margin: 0 auto;
-    background-color: rgba(255,255,255,0.983);
+    background-color: rgba(255, 255, 255, 0.103);
     border: solid 2px black;
    .show-pagi {
      margin-left: 20px;
@@ -75,7 +73,6 @@
 
 .show-contents__right {
   height: 670px;
-  background-color: rgba(255,255,255,0.3);
   width: calc(100vw - 600px );
   display: block;
   background-position: bottom;

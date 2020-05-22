@@ -19,9 +19,6 @@
    %p ＜コメント一覧＞
    -@comments.each do |comment|
     .comments-boxes
-    - if current_user_has?(comment)
-     = link_to report_comment_path(comment.report.id, comment.id) , method: :delete, data: { confirm: "削除しますか？" } do
-      =icon('far','trash-alt', class: 'icon')
     %table.comment-box
      %tr
       %th 投稿者:

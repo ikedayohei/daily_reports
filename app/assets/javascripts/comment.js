@@ -3,11 +3,8 @@ $(function(){
     var html =` <table class = comment-box>
                  <tr>
                   <th>投稿者:<th>
-
                   <th>${comment.user_name}<th>
-
-                  <th>${comment.content}<th>
-
+                  <th>::${comment.content}<th>
                  <tr>
                 <table> `
     return html

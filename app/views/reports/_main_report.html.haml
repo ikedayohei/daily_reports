@@ -15,7 +15,7 @@
     %p [報告一覧]
    .fail-date
     = link_to new_report_path(current_user.id)  do
-     =icon('far', 'folder-open', class: 'icon')
+     = icon('far', 'folder-open', class: 'icon')
      
   .my-page-box
    .my-page-name
@@ -30,7 +30,6 @@
    .company-date
     = link_to   companies_path do
      =icon('fas', 'building', class: 'icon')
-     
 
  .main-contents__2-content
   .report
@@ -38,9 +37,5 @@
     %p 報告フォーム
     = form_for [@report] do |f|
      =render partial: "form", locals: { f: f}
-
- .main-contents__3-content
-  .main-contents__3-content__calendar
- 
 
  

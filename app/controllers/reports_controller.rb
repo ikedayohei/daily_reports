@@ -42,7 +42,7 @@ class ReportsController < ApplicationController
     if @report.destory
      redirect_to root_path
     else
-     render :show
+     render :inde
     end
   end
   

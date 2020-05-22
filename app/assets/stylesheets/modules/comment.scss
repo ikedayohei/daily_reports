@@ -13,13 +13,10 @@
 }
 
 .com-contens {
-  background-image: url("14-1.jpg");
-  background-size: cover;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(149, 189, 212, 0.06);
   width: 100%;
   height: 620px;
   display: flex;
-  background-color: #59b1eb;
   justify-content: space-around;
  .com-content-left {
   width: 400px;
@@ -54,7 +51,7 @@
      height: 50px;
    }
    .com-report-box {
-    height: 200px;
+    height: 100%;
     font-size: 18px;
     margin-bottom: 10px;
     background-color: white;
