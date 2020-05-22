@@ -47,7 +47,7 @@ Things you may want to cover:
   部署内で営業日報を共有し誰でも閲覧できるようにする<br>
 
 # DEMO
-  ![c2e406f448ee959a4f9e750fad0264ec.png](./images/c2e406f448ee959a4f9e750fad0264ec.png)
+  ![c2e406f448ee959a4f9e750fad0264ec.png](c2e406f448ee959a4f9e750fad0264ec.png)
   
 # 工夫したポイント
   営業日報にコメント機能実装し部署内でコミニケーションを取れるようにした
