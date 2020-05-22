@@ -85,8 +85,8 @@ Things you may want to cover:
 |text|text|null: false|
 |where|string|null: false|
 |reponder|string|null: false|
-|companion|string|
-|-date|integer|null: false|
+|companion|string||
+|date|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
