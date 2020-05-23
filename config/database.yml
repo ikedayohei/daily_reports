@@ -50,8 +50,6 @@ test:
 production:
   <<: *default
   database: daily_reports_production
-  username: daily_reports
-  password: <%= ENV['DAILY_REPORTS_DATABASE_PASSWORD'] %>
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
