@@ -50,7 +50,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem "pq", "0.0.2"
   gem 'unicorn', '5.4.1'
 end
   

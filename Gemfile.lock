@@ -294,7 +294,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
-  pg
+  pq (= 0.0.2)
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.7, >= 5.0.7.2)
