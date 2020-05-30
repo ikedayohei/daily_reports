@@ -50,6 +50,7 @@ Things you may want to cover:
   ![c2e406f448ee959a4f9e750fad0264ec.png](c2e406f448ee959a4f9e750fad0264ec.png)
   ![f47d1e3bb80b7bc27a109d35bc7c255.png](2f47d1e3bb80b7bc27a109d35bc7c255.png)
   ![bb71bc89abec619088fcab626f06851c.png](bb71bc89abec619088fcab626f06851c.png)
+  ![6460c4eda176d55eb2bc763b7ff77d00.png](6460c4eda176d55eb2bc763b7ff77d00.png)
   ![4cad09f82a28d16699bd7ec50aa82f39.png](4cad09f82a28d16699bd7ec50aa82f39.png)
   
 # 工夫したポイント
