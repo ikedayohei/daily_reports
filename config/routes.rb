@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :companies do
    resources :likes, only: [:create, :destroy]
   end
+  require 'active_record/base' 
   resources :maps,only: [:index]
   resources :users, only: [:show, :edit, :update]
   
