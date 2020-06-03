@@ -1,28 +1,4 @@
 # README
-TEST
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 # アプリ名
   "daily_report"
@@ -39,19 +15,16 @@ Things you may want to cover:
   マイページ（お気にりと報告の閲覧）<br>
 
 # 本番環境
+  https://dailyreportss.herokuapp.com/
+  テストアカウント
+  email: aaa@gmail.com
+  passward: 12345678
 
 # 制作背景
   <問題><br>
   現在の仕事(営業職)で、営業日報を報告することになっているが、担当と上司間でのやり取りとなっている<br>
   <解決><br>
   部署内で営業日報を共有し誰でも閲覧できるようにする<br>
-
-# DEMO
-  ![c2e406f448ee959a4f9e750fad0264ec.png](c2e406f448ee959a4f9e750fad0264ec.png)
-  ![f47d1e3bb80b7bc27a109d35bc7c255.png](2f47d1e3bb80b7bc27a109d35bc7c255.png)
-  ![bb71bc89abec619088fcab626f06851c.png](bb71bc89abec619088fcab626f06851c.png)
-  ![6460c4eda176d55eb2bc763b7ff77d00.png](6460c4eda176d55eb2bc763b7ff77d00.png)
-  ![4cad09f82a28d16699bd7ec50aa82f39.png](4cad09f82a28d16699bd7ec50aa82f39.png)
   
 # 工夫したポイント
   営業日報にコメント機能実装し部署内でコミニケーションを取れるようにした
@@ -66,6 +39,14 @@ Things you may want to cover:
   マイページに閲覧履歴の追加<br>
   検索に詳細検索を追加<br>
   資料を投稿できるようにする<br>
+
+# DEMO
+  ![c2e406f448ee959a4f9e750fad0264ec.png](c2e406f448ee959a4f9e750fad0264ec.png)
+  ![f47d1e3bb80b7bc27a109d35bc7c255.png](2f47d1e3bb80b7bc27a109d35bc7c255.png)
+  ![bb71bc89abec619088fcab626f06851c.png](bb71bc89abec619088fcab626f06851c.png)
+  ![6460c4eda176d55eb2bc763b7ff77d00.png](6460c4eda176d55eb2bc763b7ff77d00.png)
+  ![4cad09f82a28d16699bd7ec50aa82f39.png](4cad09f82a28d16699bd7ec50aa82f39.png)
+  
   
 # DB設計
 ## usersテーブル

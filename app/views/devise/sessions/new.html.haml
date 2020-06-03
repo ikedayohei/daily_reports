@@ -7,6 +7,9 @@
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
+          %p テストアカウント
+          %p aaa@gmail.com
+          %p 12345678
           .field-label
             = f.label :email
           .field-input

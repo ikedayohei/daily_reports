@@ -7,22 +7,29 @@
    .user-name-box-right
     %p [User-name]
    .user-name-box-user
+   - if user_signed_in?
     = link_to edit_user_path(current_user) do
      = current_user.name
+   - else
+    = link_to "ログイン", new_user_session_path,class: "user-name-box-login"
+    = link_to "新規登録", new_user_registration_path,class: "user-name-box-new"
 
   .fail-box
    .fail-name
     %p [報告一覧]
    .fail-date
-    = link_to new_report_path(current_user.id)  do
+    = link_to new_report_path(@report.id)  do
      = icon('far', 'folder-open', class: 'icon')
      
   .my-page-box
    .my-page-name
     %p [MY-page]
    .my-page-date
-    = link_to  user_path(current_user)  do
-     =icon('far', 'id-badge', class: 'icon')
+    - if user_signed_in?
+     = link_to  user_path(current_user)  do
+      =icon('far', 'id-badge', class: 'icon')
+    - else
+     ーーー
 
   .company-box
    .company-name
@@ -35,7 +42,12 @@
   .report
    .report-title
     %p 報告フォーム
-    = form_for [@report] do |f|
-     =render partial: "form", locals: { f: f}
+    - if user_signed_in?
+     = form_for [@report] do |f|
+      =render partial: "form", locals: { f: f}
+    - else
+     = form_for [@report] do |f|
+      =render partial: "not_login_form", locals: { f: f}
+    
 
  

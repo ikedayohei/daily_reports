@@ -6,8 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @report = @user.reports.order("created_at DESC").page(params[:page]).per(3)
-    @bookmarks = Bookmark.where("user_id = ?", @user).order("created_at DESC").page(params[:page]).per(3)
+    @report = @user.reports.report_new.page(params[:page]).per(3)
+    @bookmarks = Bookmark.where("user_id = ?", @user).bookmark_user.page(params[:page]).per(3)
     @text = Report.joins(:user).count(:id)
   end
 

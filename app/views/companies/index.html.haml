@@ -9,8 +9,12 @@
     %tr
      %th『登録フォーム』
    .company-box
+   - if user_signed_in?
     = form_for [@company] do |f|
      =render partial: "company_form", locals: { f: f}
+   - else
+    = form_for [@company] do |f|
+     =render partial: "not_login_form", locals: { f: f}
    .search-box
     %p ＜訪問先 検索＞
     =render "search"
