@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-  before_action :set_report, only:[:show, :edit, :update, :destory]
+  before_action :set_report, only:[:show, :edit, :update, :destroy]
   before_action :authenticate_user!,  except:[:index]
 
   def index
@@ -39,8 +39,8 @@ class ReportsController < ApplicationController
     end
   end
 
-  def destory
-    if @report.destory
+  def destroy
+    if @report.destroy
      redirect_to root_path
     else
      render :index
